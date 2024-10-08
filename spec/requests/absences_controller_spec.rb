@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::V1::AbsencesController, type: :request do
+RSpec.describe API::V1::AbsencesController, type: :request do
   subject(:request) do
     get api_v1_absences_path
   end
