@@ -14,15 +14,15 @@ describe Studios::UpdateStaysService, type: :service do
   let(:studio) { double('Studio') }
 
   let(:stay_repository) { class_double('StayRepository', find_all_by_studio: new_stays) }
-  let(:new_stays) { [double('Stay')] }
+  let(:new_stays) { [ double('Stay') ] }
   let(:overlapping_adjuster) { ->(*) { adjuster_response } }
   let(:adjuster_response) { Dry::Monads::Success('new stays') }
 
   let(:studio_id) { 1 }
   let(:absences_params) do
     [
-      {"start_date"=>"2024-03-03", "end_date"=>"2024-03-15"},
-      {"start_date"=>"2024-03-25", "end_date"=>"2024-04-06"}
+      { "start_date"=>"2024-03-03", "end_date"=>"2024-03-15" },
+      { "start_date"=>"2024-03-25", "end_date"=>"2024-04-06" }
     ]
   end
 
@@ -31,37 +31,37 @@ describe Studios::UpdateStaysService, type: :service do
       let(:absences_params) { [] }
 
       let(:expected_errors) do
-        { errors: { absences: ["size cannot be less than 1"] } }
+        { errors: { absences: [ "size cannot be less than 1" ] } }
       end
 
       it { expect(service.failure).to eq(expected_errors) }
     end
 
     context 'when start_date is missing' do
-      let(:absences_params) { [{"end_date"=>"2024-03-15"}] }
+      let(:absences_params) { [ { "end_date"=>"2024-03-15" } ] }
 
       let(:expected_errors) do
-        {errors: {absences: {0=>{start_date: ["is missing"]}}}}
+        { errors: { absences: { 0=>{ start_date: [ "is missing" ] } } } }
       end
 
       it { expect(service.failure).to eq(expected_errors) }
     end
 
     context 'when end_date is missing' do
-      let(:absences_params) { [{"start_date"=>"2024-03-15"}] }
+      let(:absences_params) { [ { "start_date"=>"2024-03-15" } ] }
 
       let(:expected_errors) do
-        {errors: {absences: {0=>{end_date: ["is missing"]}}}}
+        { errors: { absences: { 0=>{ end_date: [ "is missing" ] } } } }
       end
 
       it { expect(service.failure).to eq(expected_errors) }
     end
 
     context 'when start_date comes after end_date' do
-      let(:absences_params) { [{"start_date"=>"2025-03-03", "end_date"=>"2024-03-15"}] }
+      let(:absences_params) { [ { "start_date"=>"2025-03-03", "end_date"=>"2024-03-15" } ] }
 
       let(:expected_errors) do
-        { errors: { absences: { 0 => ["end_date must be greater than start_date"] } } }
+        { errors: { absences: { 0 => [ "end_date must be greater than start_date" ] } } }
       end
 
       it { expect(service.failure).to eq(expected_errors) }

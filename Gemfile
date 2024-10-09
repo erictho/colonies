@@ -23,10 +23,10 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem 'dry-initializer'
-gem 'dry-monads'
-gem 'dry-matcher'
-gem 'dry-validation'
+gem "dry-initializer"
+gem "dry-monads"
+gem "dry-matcher"
+gem "dry-validation"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -37,16 +37,16 @@ gem 'dry-validation'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-  gem 'pry-byebug'
-  gem 'pry-rails'
+  gem "pry-byebug"
+  gem "pry-rails"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
   # Test Framework
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'simplecov', require: false
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "simplecov", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false

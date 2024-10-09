@@ -12,7 +12,7 @@ class AbsenceValidator < ApplicationValidator
 
   rule(:absences).each do
     if value[:end_date] <= value[:start_date]
-      key.failure('end_date must be greater than start_date')
+      key.failure("end_date must be greater than start_date")
     end
   end
 end

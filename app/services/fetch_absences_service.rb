@@ -20,7 +20,7 @@ class FetchAbsencesService < ApplicationService
   end
 
   def add_absences(stays)
-    return [{ start_date: DEFAULT_OPEN_DATE, end_date: nil }] if stays.blank?
+    return [ { start_date: DEFAULT_OPEN_DATE, end_date: nil } ] if stays.blank?
 
     [
       add_initial_absence(stays.first),

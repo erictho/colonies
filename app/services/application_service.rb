@@ -1,5 +1,5 @@
-require 'dry/monads'
-require 'dry/initializer'
+require "dry/monads"
+require "dry/initializer"
 
 class ApplicationService
   include Dry::Monads[:result, :do, :maybe]

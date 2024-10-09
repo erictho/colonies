@@ -63,12 +63,12 @@ RSpec.describe API::V1::AbsencesController, type: :request do
         }
       ],
      "studio2"=>[
-       {"start_date"=>"2024-01-01", "end_date"=>"2024-01-04"},
-       {"start_date"=>"2024-01-11", "end_date"=>"2024-01-14"},
-       {"start_date"=>"2024-01-26", "end_date"=>nil}
+       { "start_date"=>"2024-01-01", "end_date"=>"2024-01-04" },
+       { "start_date"=>"2024-01-11", "end_date"=>"2024-01-14" },
+       { "start_date"=>"2024-01-26", "end_date"=>nil }
      ],
      "studio3"=>[
-       {"start_date"=>"2024-01-01", "end_date"=>"2024-01-04"}, {"start_date"=>"2024-01-11", "end_date"=>nil}
+       { "start_date"=>"2024-01-01", "end_date"=>"2024-01-04" }, { "start_date"=>"2024-01-11", "end_date"=>nil }
      ],
      "studio4"=>[
        {

@@ -52,8 +52,8 @@ RSpec.describe API::V1::Studios::StaysController, type: :request do
 
     let(:expected_output) do
       [
-        {"start_date"=>"2024-03-01", "end_date"=>"2024-03-31"},
-        {"start_date"=>"2024-04-15", "end_date"=>nil}
+        { "start_date"=>"2024-03-01", "end_date"=>"2024-03-31" },
+        { "start_date"=>"2024-04-15", "end_date"=>nil }
       ]
     end
 
@@ -78,10 +78,10 @@ RSpec.describe API::V1::Studios::StaysController, type: :request do
 
     let(:expected_output) do
       [
-        {"start_date"=>"2024-02-02", "end_date"=>"2024-02-13"},
-        {"start_date"=>"2024-03-04", "end_date"=>"2024-03-09"},
-        {"start_date"=>"2024-03-16", "end_date"=>"2024-03-25"},
-        {"start_date"=>"2024-04-15", "end_date"=>nil}
+        { "start_date"=>"2024-02-02", "end_date"=>"2024-02-13" },
+        { "start_date"=>"2024-03-04", "end_date"=>"2024-03-09" },
+        { "start_date"=>"2024-03-16", "end_date"=>"2024-03-25" },
+        { "start_date"=>"2024-04-15", "end_date"=>nil }
       ]
     end
 
@@ -104,10 +104,10 @@ RSpec.describe API::V1::Studios::StaysController, type: :request do
 
     let(:expected_output) do
       [
-        {"start_date"=>"2024-02-02", "end_date"=>"2024-02-13"},
-        {"start_date"=>"2024-03-01", "end_date"=>"2024-03-09"},
-        {"start_date"=>"2024-03-16", "end_date"=>"2024-03-31"},
-        {"start_date"=>"2024-04-15", "end_date"=>nil}
+        { "start_date"=>"2024-02-02", "end_date"=>"2024-02-13" },
+        { "start_date"=>"2024-03-01", "end_date"=>"2024-03-09" },
+        { "start_date"=>"2024-03-16", "end_date"=>"2024-03-31" },
+        { "start_date"=>"2024-04-15", "end_date"=>nil }
       ]
     end
 
@@ -153,8 +153,8 @@ RSpec.describe API::V1::Studios::StaysController, type: :request do
 
     let(:expected_output) do
       [
-        {"start_date"=>"2024-03-01", "end_date"=>"2024-03-04"},
-        {"start_date"=>"2024-03-16", "end_date"=>"2024-03-17"}
+        { "start_date"=>"2024-03-01", "end_date"=>"2024-03-04" },
+        { "start_date"=>"2024-03-16", "end_date"=>"2024-03-17" }
       ]
     end
 
