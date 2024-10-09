@@ -16,7 +16,7 @@ class FetchAbsencesService < ApplicationService
   private
 
   def fetch_studios_with_stays
-    @studio_repository.fetch_studios_with_stays(sort_by: :start_date, sort_dir: :asc)
+    @studio_repository.fetch_studios_with_stays
   end
 
   def add_absences(stays)
@@ -44,6 +44,8 @@ class FetchAbsencesService < ApplicationService
   end
 
   def add_last_absence(last_stay)
+    return if last_stay[:end_date].nil?
+
     { start_date: last_stay[:end_date] + 1, end_date: nil }
   end
 end
