@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :absences, only: [:index]
+
+      resources :studios, only: [], constraints: { id: /\d+/ } do
+        post 'stays', to: 'studios/stays#index'
+      end
     end
   end
 end
