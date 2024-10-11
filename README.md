@@ -250,9 +250,13 @@ Further validations can be extended for the JSON payload such as ensuring there 
 ## Improvements
 
 - Implement a unique constraint on studio names
-- Performance: As the product grows, adding pagination can be considered to enhance performance and user experience
+- Performance:
+  * As the product grows, adding pagination can be considered to enhance performance and user experience
+  * Add indexes on fields such as start_date, end_date, studio_id
+  * Possibly run some queries in database rather than on client side
 - Implement comprehensive validation for the JSON payload submitted by the client
 - Manage validation errors using I18n locales instead of exposing technical errors
 - Improve data serialization in responses to ensure proper REST compliance
 - Prevent the exposure of internal IDs to the public
+
 
